@@ -8,10 +8,6 @@
  * Controller of the proyectoAngularApp
  */
 angular.module('proyectoAngularApp')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('MainCtrl', function ($scope) {
+    
   });
