@@ -19,7 +19,8 @@ angular.module('proyectoAngularApp')
 
     $scope.addBook = function(autorT, tituloT, isbnT, editorialT, anioPT, numEdT, pastaT, costoT, proveedorT) {
     	var fecha = Date.now();
-  		$scope.modelo.libro.push({fecha : fecha, usuario : "usuario1", autor:autorT, titulo : tituloT, isbn : isbnT,
+    	var user = Math.floor(Math.random() * 6) + 1  
+  		$scope.modelo.libro.push({fecha : fecha, usuario : ("usuario "+user), autor:autorT, titulo : tituloT, isbn : isbnT,
   									editorial : editorialT, anioP : anioPT, numEd : numEdT,
   									pasta : pastaT, costo : costoT, proveedor : proveedorT, estatus : "Pendiente"});
   	}
