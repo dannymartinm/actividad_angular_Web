@@ -1,16 +1,51 @@
 <div ng-controller="MainCtrl">
 <div class="page-header">
-  <h1>Lista Libros {{modelo.profesor}}
-    <span ng-class="alertaAlumnos()" ng-hide="cuentaAsistentes()==modelo.alumnos.length">
-      {{cuentaAsistentes()}}</span></h1>
+  <h1>Lista Libros</h1>
 </div>
 
 <div class="panel">
   <div class="input-group">
-    <input class="form-control" ng-model="libroInput"/>
-    <span class="input-group-btn">
-      <button class="btn btn-primary" ng-click="addLibro(libroInput)">Añadir</button>
-    </span>
+    <div class="form-group">
+      <label>Autor:</label>
+      <input class="form-control" ng-model="autorT"/>
+    </div>
+    <div class="form-group">
+      <label>Título:</label>
+      <input class="form-control" ng-model="tituloT"/>
+    </div>
+    <div class="form-group">
+      <label>ISBN:</label>
+      <input class="form-control" ng-model="isbnT"/>
+    </div>
+    <div class="form-group">
+      <label>Editorial:</label>
+      <input class="form-control" ng-model="editorialT"/>
+    </div>
+    <div class="form-group">
+      <label>Año Publicación:</label>
+      <input class="form-control" ng-model="anioPT"/>
+    </div>
+    <div class="form-group">
+      <label>Numéro Edición:</label>
+      <input class="form-control" ng-model="numEdT"/>
+    </div>
+    <div class="form-group">
+      <label>Tipo de Pasta:</label>
+      <input class="form-control" ng-model="pastaT"/>
+    </div>
+    <div class="form-group">
+      <label>Costo:</label>
+      <input class="form-control" ng-model="costoT"/>
+    </div>
+    <div class="form-group">
+      <label>Proveedores:</label>
+      <input class="form-control" ng-model="proveedorT"/>
+    </div>
+    <div class="form-group">
+      <span class="input-group-btn">
+        <button class="btn btn-primary" ng-click="addBook(autorT, tituloT, isbnT, ediorialT, anioPT, numEdT, pastaT, costoT, proveedorT)">Añadir</button>
+      </span>
+    </div>
   </div>
   <table class="table table-stripped">
     <thead>
@@ -24,14 +59,19 @@
         <th>Tipo de Pasta</th>
         <th>Costo</th>
         <th>Proveedores</th>
-        
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="alumno in modelo.alumnos">
-        <td>{{alumno.nombre}}</td>
-        <td><input type="checkbox" ng-model="alumno.estatus"/></td>
-        <td>{{alumno.estatus}}</td>
+      <tr ng-repeat="l in modelo.libro">
+        <td>{{l.autor}}</td>
+        <td>{{l.titulo}}</td>
+        <td>{{l.isbn}}</td>
+        <td>{{l.editorial}}</td>
+        <td>{{l.anioP}}</td>
+        <td>{{l.numEd}}</td>
+        <td>{{l.pasta}}</td>
+        <td>{{l.costo}}</td>
+        <td>{{l.proveedor}}</td>
       </tr>
     </tbody>
   </table>
