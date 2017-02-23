@@ -2,7 +2,6 @@
 <div class="page-header">
   <h1>Lista Libros</h1>
 </div>
-
 <div class="panel">
   <div class="input-group">
     <div class="form-group">
@@ -30,16 +29,28 @@
       <input class="form-control" ng-model="numEdT"/>
     </div>
     <div class="form-group">
-      <label>Tipo de Pasta:</label>
-      <input class="form-control" ng-model="pastaT"/>
-    </div>
-    <div class="form-group">
       <label>Costo:</label>
       <input class="form-control" ng-model="costoT"/>
     </div>
+    <br>
     <div class="form-group">
-      <label>Proveedores:</label>
-      <input class="form-control" ng-model="proveedorT"/>
+      <label>Tipo de Pasta:</label><br>
+        <select name="singleSelect" ng-model="pastaT">
+          <option value="">---Please select---</option>
+          <option value="Suave">Suave</option>
+          <option value="Dura">Dura</option>
+          <option value="Cuero">Cuero</option>
+          <option value="Tela">Tela</option>
+        </select><br>
+    </div>
+    <div class="form-group">
+      <label>Proveedores:</label><br>
+      <select name="singleSelect" ng-model="proveedorT">
+          <option value="">---Please select---</option> 
+          <option value="Proveedor1">Proveedor 1</option>
+          <option value="Proveedor2">Proveedor 2</option>
+          <option value="Proveedor3">Proveedor 3</option>
+        </select><br>
     </div>
     <div class="form-group">
       <span class="input-group-btn">
