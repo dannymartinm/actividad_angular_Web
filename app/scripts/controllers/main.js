@@ -30,10 +30,13 @@ angular.module('proyectoAngularApp')
   									pasta : pastaT, costo : costoT, proveedor : proveedorT, estatus : false});
   	}
 
-    $scope.remove = function(request) { 
+   /* $scope.remove = function(request) { 
     var index = $scope.modelo.libro.indexOf(request);
     $scope.modelo.libro.splice(index, 1);     
     }
-
+*/
+    $scope.remove = function(request){
+    $scope.modelo.libro.splice($scope.modelo.libro.indexOf(request),1);
+}
 
   });
