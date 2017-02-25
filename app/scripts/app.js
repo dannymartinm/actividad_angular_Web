@@ -12,6 +12,7 @@ angular
   .module('proyectoAngularApp', [
     'ngAnimate',
     'ngCookies',
+    'ngMaterial',
     'ngResource',
     'ngRoute',
     'ngSanitize',
