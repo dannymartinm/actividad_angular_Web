@@ -1,0 +1,21 @@
+<div ng-controller="MainCtrl">
+<md-dialog class="fullscreen-dialog" aria-label="Full Screen Dialog Test">
+      <md-toolbar>
+        <div class="md-toolbar-tools">
+          <md-button class="md-icon-button" ng-click="closeDialog()">
+            <md-icon class="fa fa-times fa-2x"></md-icon>
+          </md-button>
+          <h2 flex="flex">Full Screen Dialog Test</h2>
+        </div>
+      </md-toolbar>
+      <md-dialog-content>
+        <form name="userForm"></form>
+        <div layout="layout" layout-sm="column">
+          <md-input-container style="width:80%">
+            <label>{{ctrl.libro}}</label>
+            <input ng-model="user.company"/>
+          </md-input-container>
+          </div>
+    </md-dialog-content>
+</md-dialog>
+</div>

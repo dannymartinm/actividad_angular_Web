@@ -10,10 +10,10 @@
  */
 angular
     .module('proyectoAngularApp')
-    .controller('MainCtrl', function ($scope) {
-  	
+    .controller('MainCtrl', function ($scope,$mdDialog) {
+  	var _id = 1;
     var modelo={
-    	libro : [{fecha: '22/2/2017', usuario: 'Gandhi', autor: 'J.K', titulo: 'Harry Potter', isbn: '123456790',
+    	libro : [{id:_id++,fecha: '22/2/2017', usuario: 'Gandhi', autor: 'J.K', titulo: 'Harry Potter', isbn: '123456790',
     			editorial : 'Anagrama', anioP: '2005', numEd: '2',
     			pasta: 'Dura', costo: '300', proveedor : 'Proovedor1', estatus : true}]
     };
@@ -38,9 +38,47 @@ angular
     }
 */
     $scope.remove = function(request){
-    $scope.modelo.libro.splice($scope.modelo.libro.indexOf(request),1);
+    $scope.modelo.libro.splice($scope.modelo.libro.indexOf(request),1);       
 };
+    
+    $scope.showDialog = function(ev,l) {
+    // Appending dialog to document.body to cover sidenav in docs app
+    /*var confirm = $mdDialog.prompt()
+      .title(Editar)
+      .textContent('Cambie el valor de los campos que desee.')
+      .placeholder('Dog name')
+      .ariaLabel('Dog name')
+      .initialValue('Buddy')
+      .targetEvent(ev)
+      .ok('Okay!')
+      .cancel('I\'m a cat person');
+        
+    $mdDialog.show(confirm).then(function(result) {
+      $scope.status = 'You decided to name your dog ' + result + '.';
+    }, function() {
+      $scope.status = 'You didn\'t name your dog.';
+    }); */
+        
+        
+    $mdDialog.show({
+        controller: function Ctrl(data) {
+            var libro = data;
+        },
+        controllerAs: 'ctrl',
+        targetEvent: ev,
+        templateUrl: "views/dialog.html",
+        locals: {
+            data : l
+        }
+        
+    
+    });    
+        
+    };
 
     
     
   });
+
+
+
