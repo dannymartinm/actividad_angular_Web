@@ -5,16 +5,24 @@
           <md-button class="md-icon-button" ng-click="closeDialog()">
             <md-icon class="fa fa-times fa-2x"></md-icon>
           </md-button>
-          <h2 flex="flex">Full Screen Dialog Test</h2>
+          <h2 flex="flex">Editar</h2>
         </div>
       </md-toolbar>
       <md-dialog-content>
         <form name="userForm"></form>
         <div layout="layout" layout-sm="column">
           <md-input-container style="width:80%">
-            <label>{{ctrl.libro}}</label>
-            <input ng-model="user.company"/>
+            <label>{{data.autor}}</label>
+            <input ng-model="user.autor"/>
           </md-input-container>
+        <md-input-container style="width:80%">
+            <label>{{data.titulo}}</label>
+            <input ng-model="user.titulo"/>
+          </md-input-container>
+        <md-input-container style="width:80%">
+            <label>{{data.titulo}}</label>
+            <input ng-model="user.titulo"/>
+          </md-input-container>            
           </div>
     </md-dialog-content>
 </md-dialog>

@@ -61,8 +61,8 @@ angular
         
         
     $mdDialog.show({
-        controller: function Ctrl(data) {
-            var libro = data;
+        controller: function Ctrl($scope, $mdDialog, data) {
+            $scope.data = data;
         },
         controllerAs: 'ctrl',
         targetEvent: ev,
