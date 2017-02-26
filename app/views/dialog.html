@@ -9,21 +9,28 @@
         </div>
       </md-toolbar>
       <md-dialog-content>
-        <form name="userForm"></form>
+        <form name="form"></form>
         <div layout="layout" layout-sm="column">
           <md-input-container style="width:80%">
-            <label>{{data.autor}}</label>
-            <input ng-model="user.autor"/>
+            <label>Autor</label>
+            <input ng-model="modelo.libro.autor" placeholder="{{data.autor}}"/>
           </md-input-container>
         <md-input-container style="width:80%">
-            <label>{{data.titulo}}</label>
-            <input ng-model="user.titulo"/>
+            <label>Titulo</label>
+            <input ng-model="modelo.libro.titulo" placeholder="{{data.titulo}}"/>
           </md-input-container>
         <md-input-container style="width:80%">
-            <label>{{data.titulo}}</label>
-            <input ng-model="user.titulo"/>
-          </md-input-container>            
+            <label>{{data.isbn}}</label>
+            <input ng-model="modelo.libro.isbn"/>
+          </md-input-container>
+          <md-input-container style="width:80%">
+            <label>{{data.editorial}}</label>
+            <input ng-model="modelo.libro.editorial"/>
+          </md-input-container>              
           </div>
+           <td>
+        <span class="input-group-btn"> <button class="btn btn-primary" ng-click="edit(modelo.libro.autor)">Modificar</button></span>
+        </td>
     </md-dialog-content>
 </md-dialog>
 </div>

@@ -10,7 +10,7 @@
  */
 angular
     .module('proyectoAngularApp')
-    .controller('MainCtrl', function ($scope,$mdDialog) {
+    .controller('MainCtrl', function ($scope,$mdDialog, $log) {
   	var _id = 1;
     var modelo={
     	libro : [{id:_id++,fecha: '22/2/2017', usuario: 'Gandhi', autor: 'J.K', titulo: 'Harry Potter', isbn: '123456790',
@@ -38,8 +38,17 @@ angular
     }
 */
     $scope.remove = function(request){
-    $scope.modelo.libro.splice($scope.modelo.libro.indexOf(request),1);       
-};
+      $scope.modelo.libro.splice($scope.modelo.libro.indexOf(request),1);       
+    };
+
+    $scope.edit = function(l) {
+      $log.debug("debug: "+$scope.modelo.libro.autor);
+      $scope.modelo.libro.autor = l;
+
+      $mdDialog.hide({
+        
+        });
+    }
     
     $scope.showDialog = function(ev,l) {
     // Appending dialog to document.body to cover sidenav in docs app
@@ -61,14 +70,14 @@ angular
         
         
     $mdDialog.show({
-        controller: function Ctrl($scope, $mdDialog, data) {
-            $scope.data = data;
+        controller: function Ctrl($scope, $mdDialog, l) {
+            $scope.data = l;
         },
         controllerAs: 'ctrl',
         targetEvent: ev,
         templateUrl: "views/dialog.html",
         locals: {
-            data : l
+            l : l
         }
         
     
