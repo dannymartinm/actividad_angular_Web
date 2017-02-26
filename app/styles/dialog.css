@@ -1,0 +1,9 @@
+.md-dialog-container {
+  position: absolute;
+}
+
+md-dialog {
+  max-width: 70%;
+  max-height: 100%;
+  margin-right: auto; margin-left: auto;
+}

@@ -1,3 +1,7 @@
+<head>
+    <link rel="stylesheet" href="styles/dialog.css">
+</head>
+
 <div ng-controller="MainCtrl">
 <md-dialog class="fullscreen-dialog" aria-label="Full Screen Dialog Test">
       <md-toolbar>
@@ -53,15 +57,13 @@
             <label>Proveedores:</label>
             <br>
             <select name="singleSelect" ng-model="data.proveedor">
-              <option value="proveedor1">Proveedor1</option>
-              <option value="proveedor2">Proveedor2</option>
-              <option value="proveedor3">Proveedor3</option>
+              <option value="Proveedor1">Proveedor1</option>
+              <option value="Proveedor2">Proveedor2</option>
+              <option value="Proveedor3">Proveedor3</option>
             </select>
           </md-input-container> 
-           <td>
-            <span class="input-group-btn"> <button class="btn btn-primary" ng-click="hideDialog()">Modificar</button></span>
-          </td>
           </div>  
+          <span class="input-group-btn"> <button class="btn btn-primary" ng-click="hideDialog()">Modificar</button></span>
       </md-dialog-content>
 </md-dialog>
 </div>
