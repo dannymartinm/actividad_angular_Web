@@ -45,7 +45,19 @@ angular
       $mdDialog.hide({
         });
     }
-    
+
+    $scope.find = function(dataSearch){
+
+      angular.forEach($scope.modelo.libro, function(item){
+        $log.debug("item:"+item.autor);
+      if(item.autor == (dataSearch)) { 
+        return $log.debug("siENcontrado:"+dataSearch);
+      }else{
+        return $log.debug("noEncontrado:"+dataSearch);
+      }
+      })
+    }
+
     $scope.showDialog = function(ev,l) {
     // Appending dialog to document.body to cover sidenav in docs app
     /*var confirm = $mdDialog.prompt()
