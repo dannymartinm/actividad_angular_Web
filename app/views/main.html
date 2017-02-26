@@ -49,7 +49,7 @@
     <div class="form-group">
       <label>Tipo de Pasta:</label><br>
         <select name="singleSelect" ng-model="pastaT">
-          <option value="">---Please select---</option>
+          <option value="">Please select</option>
           <option value="Suave">Suave</option>
           <option value="Dura">Dura</option>
           <option value="Cuero">Cuero</option>
@@ -59,7 +59,7 @@
     <div class="form-group">
       <label>Proveedores:</label><br>
       <select name="singleSelect" ng-model="proveedorT">
-          <option value="">---Please select---</option> 
+          <option value="">Please select</option> 
           <option value="Proveedor1">Proveedor 1</option>
           <option value="Proveedor2">Proveedor 2</option>
           <option value="Proveedor3">Proveedor 3</option>
@@ -101,8 +101,8 @@
         <td>{{l.costo | currency}}</td>
         <td>{{l.pasta}}</td>
         <td>{{l.proveedor}}</td>
-        <td>{{l.estatus}}</td>
-        <td><input type="checkbox" ng-model="l.estatus"/></td>
+        <td>{{l.estatus}}  <input type="checkbox" ng-model="l.estatus"/></td>
+       
         <td>
         <span class="input-group-btn"> <button class="btn btn-primary" ng-click="remove(l)">Eliminar</button></span>
         </td>
