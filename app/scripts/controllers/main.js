@@ -46,12 +46,22 @@ angular
         });
     }
 
-    $scope.find = function(dataSearch){
+    $scope.find = function(ev,dataSearch){
 
       angular.forEach($scope.modelo.libro, function(item){
-        $log.debug("item:"+item.autor);
+        $log.debug("item:---"+item.autor);
       if(item.autor == (dataSearch)) { 
-        return $log.debug("siENcontrado:"+dataSearch);
+        $mdDialog.show({
+        controller: function Ctrl($scope, $mdDialog, item) {
+            $scope.data = item;
+        },
+        controllerAs: 'ctrl',
+        targetEvent: ev,
+        templateUrl: "views/show.html",
+        locals: {
+            item : item
+        }
+    }); 
       }else{
         return $log.debug("noEncontrado:"+dataSearch);
       }

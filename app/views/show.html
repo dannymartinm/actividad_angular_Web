@@ -1,0 +1,67 @@
+<head>
+    <link rel="stylesheet" href="styles/dialog.css">
+</head>
+
+<div ng-controller="MainCtrl">
+<md-dialog class="fullscreen-dialog" aria-label="Full Screen Dialog Test">
+      <md-toolbar>
+        <div class="md-toolbar-tools">
+          <md-button class="md-icon-button" ng-click="closeDialog()">
+            <md-icon class="fa fa-times fa-2x"></md-icon>
+          </md-button>
+          <h2 flex="flex">Ver</h2>
+        </div>
+      </md-toolbar>
+      <md-dialog-content>
+        <div layout="layout" layout-lg>
+          <md-input-container style="width:80%">
+            <label>Autor:</label>
+            <br>
+            <td>{{data.autor}}<td/>
+          </md-input-container>
+        <md-input-container style="width:80%">
+            <label>Titulo:</label>
+            <br>
+            <td>{{data.titulo}}"<td/>
+        </md-input-container>
+        <md-input-container style="width:80%">
+            <label>ISBN:</label>
+            <br>
+            <td>{{data.isbn}}<td/>
+          </md-input-container>
+          <md-input-container style="width:80%">
+            <label>Editorial:</label>
+            <br>
+            <td>{{data.editorial}}<td/>
+          </md-input-container>    
+          <md-input-container style="width:80%">
+            <label>Año Publicación:</label>
+            <br>
+            <td>{{data.anioP}}<td/>
+          </md-input-container>
+          <md-input-container style="width:80%">
+            <label>Num Edición:</label>
+            <br>
+            <td>{{data.numEd}}<td/>
+          </md-input-container>  
+          <md-input-container style="width:80%">
+            <label>Costo:</label>
+            <br>
+            <td>{{data.costo}}<td/>
+          </md-input-container>          
+          <md-input-container style="width:80%">
+            <label>Tipo de Pasta:</label>
+            <br>
+            <td>{{data.pasta}}<td/>
+          </md-input-container>  
+          <md-input-container style="width:80%">
+            <label>Proveedores:</label>
+            <br>
+            <td>{{data.proveedor}}<td/>
+          </md-input-container> 
+          </div>
+          <span class="input-group-btn"> <button class="btn btn-primary" ng-click="hideDialog()">Cerrar</button></span>
+          <br>
+      </md-dialog-content>
+</md-dialog>
+</div>

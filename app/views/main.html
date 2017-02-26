@@ -4,7 +4,7 @@
     <label>Buscar por Autor</label>
     <input class="form-control" ng-model="search"/>
     <br>
-    <button class="btn btn-primary" ng-click="find(search)">Buscar</button>
+    <button class="btn btn-primary" ng-click="find($event,search)">Buscar</button>
     <span class="glyphicon glyphicon-search form-control-feedback"></span>
   </div>
   <h1>Lista Libros</h1>
