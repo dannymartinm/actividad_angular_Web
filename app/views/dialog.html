@@ -9,28 +9,59 @@
         </div>
       </md-toolbar>
       <md-dialog-content>
-        <form name="form"></form>
-        <div layout="layout" layout-sm="column">
+        <div layout="layout" layout-lg>
           <md-input-container style="width:80%">
-            <label>Autor</label>
-            <input ng-model="modelo.libro.autor" placeholder="{{data.autor}}"/>
+            <label>Autor:</label>
+            <input ng-model="data.autor" placeholder="{{data.autor}}"/>
           </md-input-container>
         <md-input-container style="width:80%">
-            <label>Titulo</label>
-            <input ng-model="modelo.libro.titulo" placeholder="{{data.titulo}}"/>
+            <label>Titulo:</label>
+            <input ng-model="data.titulo" placeholder="{{data.titulo}}"/>
           </md-input-container>
         <md-input-container style="width:80%">
-            <label>{{data.isbn}}</label>
-            <input ng-model="modelo.libro.isbn"/>
+            <label>ISBN:</label>
+            <input ng-model="data.isbn" placeholder="{{data.isbn}}"/>
           </md-input-container>
           <md-input-container style="width:80%">
-            <label>{{data.editorial}}</label>
-            <input ng-model="modelo.libro.editorial"/>
-          </md-input-container>              
-          </div>
+            <label>Editorial:</label>
+            <input ng-model="data.editorial" placeholder="{{data.editorial}}"/>
+          </md-input-container>    
+          <md-input-container style="width:80%">
+            <label>Año Publicación:</label>
+            <input ng-model="data.anioP" placeholder="{{data.anioP}}"/>
+          </md-input-container>
+          <md-input-container style="width:80%">
+            <label>Num Edición:</label>
+            <input ng-model="data.numEd" placeholder="{{data.numEd}}"/>
+          </md-input-container>  
+          <md-input-container style="width:80%">
+            <label>Costo:</label>
+            <input ng-model="data.costo" placeholder="{{data.costo}}"/>
+          </md-input-container>          
+          
+          <md-input-container style="width:80%">
+            <label>Tipo de Pasta:</label>
+            <br>
+            <select name="singleSelect" ng-model="data.pasta">
+              <option value="Suave">Suave</option>
+              <option value="Dura">Dura</option>
+              <option value="Cuero">Cuero</option>
+              <option value="Tela">Tela</option>
+            </select>
+          </md-input-container>  
+          <md-input-container style="width:80%">
+            <label>Proveedores:</label>
+            <br>
+            <select name="singleSelect" ng-model="data.proveedor">
+              <option value="proveedor1">Proveedor1</option>
+              <option value="proveedor2">Proveedor2</option>
+              <option value="proveedor3">Proveedor3</option>
+            </select>
+          </md-input-container> 
            <td>
-        <span class="input-group-btn"> <button class="btn btn-primary" ng-click="edit(modelo.libro.autor)">Modificar</button></span>
-        </td>
-    </md-dialog-content>
+            <span class="input-group-btn"> <button class="btn btn-primary" ng-click="hideDialog()">Modificar</button></span>
+          </td>
+          </div>  
+      </md-dialog-content>
 </md-dialog>
 </div>

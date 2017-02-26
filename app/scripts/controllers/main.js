@@ -15,7 +15,7 @@ angular
     var modelo={
     	libro : [{id:_id++,fecha: '22/2/2017', usuario: 'Gandhi', autor: 'J.K', titulo: 'Harry Potter', isbn: '123456790',
     			editorial : 'Anagrama', anioP: '2005', numEd: '2',
-    			pasta: 'Dura', costo: '300', proveedor : 'Proovedor1', estatus : true}]
+    			pasta: 'Dura', costo: '300', proveedor : 'proovedor1', estatus : true}]
     };
     $scope.modelo = modelo;
 
@@ -41,12 +41,8 @@ angular
       $scope.modelo.libro.splice($scope.modelo.libro.indexOf(request),1);       
     };
 
-    $scope.edit = function(l) {
-      $log.debug("debug: "+$scope.modelo.libro.autor);
-      $scope.modelo.libro.autor = l;
-
+    $scope.hideDialog = function() {
       $mdDialog.hide({
-        
         });
     }
     
@@ -79,8 +75,6 @@ angular
         locals: {
             l : l
         }
-        
-    
     });    
         
     };
