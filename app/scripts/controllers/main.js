@@ -42,15 +42,16 @@ angular
     };
 
     $scope.hideDialog = function() {
+//      $scope.notFound = "Si esdsdsdsdssncontrado";
       $mdDialog.hide({
         });
+
     }
 
     $scope.find = function(ev,dataSearch){
 
       angular.forEach($scope.modelo.libro, function(item){
-        $log.debug("item:---"+item.autor);
-      if(item.autor == (dataSearch)) { 
+      if(item.autor == (dataSearch) || item.titulo == dataSearch) { 
         $mdDialog.show({
         controller: function Ctrl($scope, $mdDialog, item) {
             $scope.data = item;
@@ -62,31 +63,14 @@ angular
             item : item
         }
     }); 
+        $scope.notFound = "";
       }else{
-        return $log.debug("noEncontrado:"+dataSearch);
+         return $scope.notFound = "No encontrado";
       }
       })
     }
 
-    $scope.showDialog = function(ev,l) {
-    // Appending dialog to document.body to cover sidenav in docs app
-    /*var confirm = $mdDialog.prompt()
-      .title(Editar)
-      .textContent('Cambie el valor de los campos que desee.')
-      .placeholder('Dog name')
-      .ariaLabel('Dog name')
-      .initialValue('Buddy')
-      .targetEvent(ev)
-      .ok('Okay!')
-      .cancel('I\'m a cat person');
-        
-    $mdDialog.show(confirm).then(function(result) {
-      $scope.status = 'You decided to name your dog ' + result + '.';
-    }, function() {
-      $scope.status = 'You didn\'t name your dog.';
-    }); */
-        
-        
+    $scope.showDialog = function(ev,l) {        
     $mdDialog.show({
         controller: function Ctrl($scope, $mdDialog, l) {
             $scope.data = l;

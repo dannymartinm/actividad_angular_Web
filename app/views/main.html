@@ -1,11 +1,13 @@
 <div ng-controller="MainCtrl">
 <div class="page-header">
   <div class="form-group has-feedback">
-    <label>Buscar por Autor</label>
+    <label>Buscar por Título</label>
     <input class="form-control" ng-model="search"/>
     <br>
     <button class="btn btn-primary" ng-click="find($event,search)">Buscar</button>
     <span class="glyphicon glyphicon-search form-control-feedback"></span>
+    <h4><span ng-class="label-danger">{{notFound}}</span></h4>
+</span>
   </div>
   <h1>Lista Libros</h1>
 </div>
